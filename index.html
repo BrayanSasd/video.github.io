@@ -1,0 +1,177 @@
+<!doctype>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+<style>
+#miCanvas{
+	border:dotted 2px yellow;
+	background:green;	
+}
+</style>
+<script>
+window.onload = function(){
+	var canvas = document.getElementById("miCanvas");
+	if(canvas && canvas.getContext){
+		var ctx = canvas.getContext("2d");
+		if(ctx){
+			var gradiente = ctx.createLinearGradient(0,0,0,canvas.height);
+			gradiente.addColorStop(0, "black");
+			gradiente.addColorStop(0.7, "blue");
+			gradiente.addColorStop(0.8, "blue");
+			gradiente.addColorStop(1, "black");
+			gradiente.addColorStop(1, "black");
+
+			var imagen = new Image();
+			function procesaImagen(){
+				ctx.drawImage(imagen,1000,75);
+			}
+			imagen.src = "./imagenes/Foto.jpg";
+			imagen.onload = function(e){
+				procesaImagen();
+			}
+
+			ctx.fillStyle = gradiente;
+			ctx.fillRect(0,0,canvas.width,canvas.height);
+
+			ctx.lineWidth = 35;
+			ctx.strokeStyle = "blue";
+//B			
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(50,50);
+			ctx.lineTo(50,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.arc(50,100,60, 1.5*Math.PI, 2.5*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.arc(50,250,60, 1.5*Math.PI, 2.5*Math.PI);
+			ctx.stroke();
+//R
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(200,50);
+			ctx.lineTo(200,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.arc(200,100,60, 1.5*Math.PI, 2.5*Math.PI);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(200,150);
+			ctx.lineTo(300,300);
+			ctx.stroke();
+//A
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(350,50);
+			ctx.lineTo(350,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(350,50);
+			ctx.lineTo(450,50);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(450,50);
+			ctx.lineTo(450,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(350,150);
+			ctx.lineTo(450,150);
+			ctx.stroke();
+
+//y
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(500,50);
+			ctx.lineTo(550,150);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(600,50);
+			ctx.lineTo(550,150);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(550,150);
+			ctx.lineTo(550,300);
+			ctx.stroke();
+
+//A
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(650,50);
+			ctx.lineTo(650,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(650,50);
+			ctx.lineTo(750,50);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(750,50);
+			ctx.lineTo(750,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(650,150);
+			ctx.lineTo(750,150);
+			ctx.stroke();
+
+//N
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(800,50);
+			ctx.lineTo(800,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(800,50);
+			ctx.lineTo(900,300);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.lineCap="round"
+			ctx.moveTo(900,50);
+			ctx.lineTo(900,300);
+			ctx.stroke();
+
+		} else {
+			alert("Error al crear tu contexto");	
+		}
+	}
+}
+</script>
+</head>
+<body>
+<h1>Conceptos Basicos Canvas</h1>
+<canvas id="miCanvas" width="1200px" height="500px">
+Tu navegador no soporta CANVAS
+</canvas>
+<div><a href="juego.html">Pulsa para Jugar </a></div>
+</body>
+</html>
